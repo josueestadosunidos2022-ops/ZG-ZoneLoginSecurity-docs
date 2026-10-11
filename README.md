@@ -2,49 +2,19 @@
 
 ## English
 
-Server-controlled registration, login sessions and account protection. Minecraft 1.20.1 / Forge 47.x.
+Pre-world account registration, encrypted login transport, sessions, administrator leases and audit controls for Minecraft 1.20.1 / Forge 47.4.x. Current pair: **server 1.1.3 + client 1.0.3**. Both files belong to one CurseForge project. The server requires ZoneCore 2.1.2+; ZoneLag 4.2.0+ is an optional server integration. ZoneSecurity 2.1.0 is **included inside the server JAR**; do not install a separate ZoneSecurity JAR. Use the ZoneLoginSecurity client, not the ZoneLag login client, when this authentication service owns accounts.
 
-### Installation
+The login check runs before access to the world. The client pins the **public** GOCHOCASTLE server certificate fingerprint; it contains no private identity. Keep the matching server's persistent identity and account database private, backed up and unchanged during a routine JAR update. An explicit local fingerprint override takes precedence and a mismatch fails closed. Administrators grant time-limited OP only from the server console after login; no automatic OP on account login.
 
-Install the labeled server JAR on the server and its compatible client JAR on players' clients. Both files belong to the same CurseForge project. The two version numbers may differ; follow the stated pair, never mix releases. Required mod dependencies shown by current source metadata: **ZoneCore, ZoneLag**. Check the dependency version range of the exact uploaded file before installation.
-
-### Configuration
-
-Edit generated TOML files while the server or game is stopped unless a documented reload command is available. Back up persistent data before updates.
-
-| Config file | Use |
-|---|---|
-| `zoneloginsecurity/general.toml` | Verify the exact generated path and options for the selected release. |
-| `zoneloginsecurity/registration.toml` | Verify the exact generated path and options for the selected release. |
-| `zoneloginsecurity/sessions.toml` | Verify the exact generated path and options for the selected release. |
-| `zoneloginsecurity/administration.toml` | Verify the exact generated path and options for the selected release. |
-| `zoneloginsecurity/audit.toml` | Verify the exact generated path and options for the selected release. |
-
-See [configuration reference](CONFIGURATION.md) for keys detected in source and [release compatibility](RELEASES.md) for version-pair rules.
+Config files live under `config/zoneloginsecurity/`, including `general.toml`, `registration.toml`, `credentials.toml`, `sessions.toml`, `administration.toml`, `storage.toml`, `audit.toml` and more. See [configuration and safe update guide](CONFIGURATION.md) and [release compatibility](RELEASES.md). Do not share account databases, identity files, passwords, invitation codes or production configuration.
 
 ## Español
 
-Registro, sesiones de acceso y protección de cuentas controlados por el servidor. Minecraft 1.20.1 / Forge 47.x.
+Registro antes de entrar al mundo, transporte de login cifrado, sesiones, permisos OP temporales y auditoría para Minecraft 1.20.1 / Forge 47.4.x. Pareja: **servidor 1.1.3 + cliente 1.0.3** en un único proyecto CurseForge. El servidor requiere ZoneCore 2.1.2+; ZoneLag 4.2.0+ es una integración opcional. ZoneSecurity 2.1.0 viene **integrado en el JAR servidor**; no instales otro ZoneSecurity. Usa el cliente ZoneLoginSecurity cuando este sistema administra las cuentas, no el cliente de login ZoneLag.
 
-### Instalación
+El login se verifica antes de entrar al mundo. El cliente fija la huella **pública** del certificado de GOCHOCASTLE; no incluye identidad privada. Conserva y respalda en privado la identidad persistente y la base de cuentas del servidor al actualizar el JAR. Una huella local explícita tiene prioridad y una discrepancia deniega la conexión. El OP temporal se concede solo desde consola después del login; no se concede automáticamente al autenticarse.
 
-Instala el JAR marcado servidor en el servidor y su JAR cliente compatible en los clientes. Ambos archivos pertenecen al mismo proyecto CurseForge. Los números de versión pueden diferir; respeta la pareja indicada y no mezcles entregas. Dependencias obligatorias indicadas por los metadatos actuales: **ZoneCore, ZoneLag**. Comprueba el rango de versión del archivo exacto que instales.
+Los TOML están en `config/zoneloginsecurity/`: `general.toml`, `registration.toml`, `credentials.toml`, `sessions.toml`, `administration.toml`, `storage.toml`, `audit.toml` y otros. Consulta [configuración y actualización segura](CONFIGURATION.md) y [compatibilidad](RELEASES.md). No compartas bases de cuentas, identidad privada, contraseñas, códigos ni TOML reales.
 
-### Configuración
-
-Edita los TOML generados con el servidor o juego detenido, salvo que exista un comando de recarga documentado. Respalda los datos persistentes antes de actualizar.
-
-| Archivo de configuración | Uso |
-|---|---|
-| `zoneloginsecurity/general.toml` | Comprueba la ruta y opciones generadas de la entrega elegida. |
-| `zoneloginsecurity/registration.toml` | Comprueba la ruta y opciones generadas de la entrega elegida. |
-| `zoneloginsecurity/sessions.toml` | Comprueba la ruta y opciones generadas de la entrega elegida. |
-| `zoneloginsecurity/administration.toml` | Comprueba la ruta y opciones generadas de la entrega elegida. |
-| `zoneloginsecurity/audit.toml` | Comprueba la ruta y opciones generadas de la entrega elegida. |
-
-Consulta la [referencia de configuración](CONFIGURATION.md) para claves detectadas en el código y la [compatibilidad de entregas](RELEASES.md) para las parejas de versiones.
-
-## Ownership / Titularidad
-
-Documentation and original ZONE visual assets © Elgochogms. This repository contains documentation and a project avatar only; it does not distribute mod source code, private mappings, server secrets or production configuration.
+© Elgochogms. This repository contains documentation and a ZG avatar only; bundled third-party libraries retain their own licenses.
 

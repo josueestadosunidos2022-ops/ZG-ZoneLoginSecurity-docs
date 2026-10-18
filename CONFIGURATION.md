@@ -1,4 +1,4 @@
-# ZG ZoneLoginSecurity 1.1.3 / 1.0.3 — configuration / configuración
+# ZoneLoginSecurity 1.1.3 / 1.0.3 — configuration / configuración
 
 ## English
 

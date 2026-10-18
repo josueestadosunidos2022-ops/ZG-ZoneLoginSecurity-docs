@@ -1,4 +1,4 @@
-# ZG ZoneLoginSecurity
+# ZoneLoginSecurity
 
 ## English
 
@@ -16,5 +16,5 @@ El login se verifica antes de entrar al mundo. El cliente fija la huella **públ
 
 Los TOML están en `config/zoneloginsecurity/`: `general.toml`, `registration.toml`, `credentials.toml`, `sessions.toml`, `administration.toml`, `storage.toml`, `audit.toml` y otros. Consulta [configuración y actualización segura](CONFIGURATION.md) y [compatibilidad](RELEASES.md). No compartas bases de cuentas, identidad privada, contraseñas, códigos ni TOML reales.
 
-© Elgochogms. This repository contains documentation and a ZG avatar only; bundled third-party libraries retain their own licenses.
+© Elgochogms. This repository contains documentation and a avatar only; bundled third-party libraries retain their own licenses.
 

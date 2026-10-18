@@ -1,4 +1,4 @@
-# ZG ZoneLoginSecurity — releases and compatibility
+# ZoneLoginSecurity — releases and compatibility
 
 Current protected pair: **server 1.1.3 + client 1.0.3** on one CurseForge project, Minecraft 1.20.1, Forge 47.4.x, Java 17. The server requires ZoneCore 2.1.2+ and optionally integrates ZoneLag 4.2.0+. ZoneSecurity is already integrated. The client contains the expected public GOCHOCASTLE certificate fingerprint; do not install it for a different server without an explicitly verified matching pin. Keep server identity, account DB and config private and backed up. Do not install test or unprotected JARs.
 
